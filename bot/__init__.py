@@ -4,19 +4,20 @@ from pyrogram import Client
 from pyromod import listen
 import pymongo
 from pymongo import MongoClient
+from os import environ
 
 class Creds:
  TEAMDRIVE_FOLDER_ID = ""
  TEAMDRIVE_ID = ""
 
 class Config(object):
-  BOT_TOKEN = ''
-  API_ID = ''
-  API_HASH = ''
+  BOT_TOKEN = str(environ.get("BOT_TOKEN"))
+  API_ID = int(environ.get("API_ID"))
+  API_HASH = str(environ.get("API_HASH"))
   DOWNLOAD_DIR = 'downloads'
-  AUTH_USERS = [5703071595, 1522872961]
-  DATABASE_URL = str("")
-  USERNAME = ""
+  AUTH_USERS = [5071059420]
+  DATABASE_URL = str(environ.get("DATABASE_URL"))
+  USERNAME = str(environ.get("USERNAME"))
 
 LOG_FILE_NAME = "Gdrive-Bot@Log.txt"
 
